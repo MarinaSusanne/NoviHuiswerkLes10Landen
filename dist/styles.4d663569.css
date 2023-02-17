@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #babd8d;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+h1 {
+  text-align: center;
+  font-family: Bookman Old Style, sans-serif;
+  font-size: 85px;
+}
+
+p {
+  font-family: Baskerville, serif;
+}
+
+#image-wrapper {
+  width: 80%;
+  display: flex;
+}
+
+.blue-country {
+  color: #00f;
+}
+
+.green-country {
+  color: green;
+}
+
+.purple-country {
+  color: purple;
+}
+
+.yellow-country {
+  color: #b8860b;
+}
+
+.red-country {
+  color: red;
+}
+
+.flag-country {
+  width: 10%;
+}
+
+ul {
+  column-count: 3;
+  background-color: #ffdac6;
+  padding: 30px;
+}
+
+li {
+  flex-grow: 1;
+  font-size: 18px;
+  list-style: none;
+}
+
+p {
+  font-size: 18px;
+}
+
+/*# sourceMappingURL=styles.4d663569.css.map */
