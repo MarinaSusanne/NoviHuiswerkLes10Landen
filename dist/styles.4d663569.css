@@ -1,3 +1,4 @@
+@import "https://fonts.googleapis.com/css2?family=Pacifico&display=swap";
 * {
   box-sizing: border-box;
   width: 100%;
@@ -14,7 +15,7 @@ body {
 
 h1 {
   text-align: center;
-  font-family: Bookman Old Style, sans-serif;
+  font-family: Pacifico, cursive;
   font-size: 85px;
 }
 
@@ -24,6 +25,11 @@ p {
 
 #image-wrapper {
   width: 80%;
+  display: flex;
+}
+
+#image-wrapper2 {
+  width: 30%;
   display: flex;
 }
 
@@ -65,6 +71,29 @@ li {
 
 p {
   font-size: 18px;
+}
+
+.search-for-countries {
+  justify-content: center;
+  display: flex;
+}
+
+#text-field {
+  height: 50px;
+  width: 500px;
+  text-align: center;
+  background-color: #0000;
+  border-radius: 40px 0 0 40px;
+  align-items: center;
+}
+
+.search-country-button {
+  height: 50px;
+  width: 250px;
+  color: #fff;
+  text-align: center;
+  background-color: #000;
+  border-radius: 0 30px 30px 0;
 }
 
 /*# sourceMappingURL=styles.4d663569.css.map */

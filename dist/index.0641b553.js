@@ -577,7 +577,6 @@ async function getCountries() {
         console.error(e);
     }
 }
-console.log(getCountries());
 async function finalCountries() {
     try {
         const result = await (0, _axiosDefault.default).get("https://restcountries.com/v2/all");
@@ -618,6 +617,24 @@ function allocateColor(region) {
             return "grey-country";
     }
 }
+async function getNetherlands() {
+    try {
+        const result = await (0, _axiosDefault.default).get("https://restcountries.com/v2/name/Netherlands");
+        const cleanNetherlands = result.data[0];
+        console.log(cleanNetherlands.name);
+        console.log(cleanNetherlands.population);
+        const printingNetherlands = document.getElementById("search-countries");
+        printingNetherlands.innerHTML = `
+                <img src="${cleanNetherlands.flag}" class ="flag-country-netherlands" alt="flag-country">  ${cleanNetherlands.name} </li> 
+                <p> Has a population of ${cleanNetherlands.population}</p>
+                `;
+    } catch (e) {
+        console.error(e);
+    }
+    console.log(getNetherlands());
+}
+getNetherlands();
+function getValuta(country) {}
 
 },{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

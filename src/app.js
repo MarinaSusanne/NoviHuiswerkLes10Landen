@@ -19,8 +19,6 @@ async function getCountries() {
             console.error(e);
         }
     }
-    console.log(getCountries());
-
 
 
 async function finalCountries() {
@@ -47,8 +45,8 @@ async function finalCountries() {
     }
 
 }
-
 finalCountries();
+
 
 //return String color
 function allocateColor (region) {
@@ -73,4 +71,40 @@ function allocateColor (region) {
             break;
     }
 }
+
+
+    async function getNetherlands() {
+        try {
+            const result = await axios.get('https://restcountries.com/v2/name/Netherlands');
+            const cleanNetherlands = result.data[0];
+            console.log(cleanNetherlands.name);
+            console.log(cleanNetherlands.population);
+            const printingNetherlands = document.getElementById('search-countries');
+            printingNetherlands.innerHTML =
+                `
+                <img src="${cleanNetherlands.flag}" class ="flag-country-netherlands" alt="flag-country">  ${cleanNetherlands.name} </li> 
+                <p> Has a population of ${cleanNetherlands.population}</p>
+                `
+            } catch (e) {
+              console.error(e);
+        }
+        console.log(getNetherlands());
+    }
+
+    getNetherlands();
+
+function getValuta (country) {
+
+
+}
+
+
+
+
+
+
+
+
+
+
 
