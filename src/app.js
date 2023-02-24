@@ -11,9 +11,9 @@ async function getCountries() {
         const printingCountries = document.getElementById('show_countries');
         printingCountries.innerHTML =
             `
-           <li class="${allocateColor(result.data[0].region)}" > <img src="${result.data[0].flag}" class ="flag-country" alt="flag-country">  ${result.data[0].name} </li> 
+           <li class="${allocateColor(result.data[0].region)}" > <img src="${result.data[0].flag}" class ="flag-country" alt="flag-country">  ${result.data[0].name} </li>
            <p> Has a population of ${result.data[0].population}</p>
-          
+
             `
         } catch (e) {
             console.error(e);
@@ -32,7 +32,7 @@ async function finalCountries() {
         })
         // Ga langs met map methode
         const mappingCountries = countriesSorted.map((country, index) => {
-            return `<li class="${allocateColor(countriesSorted[index].region)}" > <img src="${countriesSorted[index].flag}" class ="flag-country" alt="flag-country">  ${countriesSorted[index].name} </li> 
+            return `<li class="${allocateColor(countriesSorted[index].region)}" > <img src="${countriesSorted[index].flag}" class ="flag-country" alt="flag-country">  ${countriesSorted[index].name} </li>
            <p> Has a population of: ${countriesSorted[index].population} people </p>
             `
             })
@@ -73,29 +73,61 @@ function allocateColor (region) {
 }
 
 
-    async function getNetherlands() {
-        try {
-            const result = await axios.get('https://restcountries.com/v2/name/Netherlands');
-            const cleanNetherlands = result.data[0];
-            console.log(cleanNetherlands.name);
-            console.log(cleanNetherlands.population);
-            const printingNetherlands = document.getElementById('search-countries');
-            printingNetherlands.innerHTML =
-                `
-                <img src="${cleanNetherlands.flag}" class ="flag-country-netherlands" alt="flag-country">  ${cleanNetherlands.name} </li> 
-                <p> Has a population of ${cleanNetherlands.population}</p>
-                `
-            } catch (e) {
-              console.error(e);
-        }
-        console.log(getNetherlands());
+/////////////////////// OPDRACHT 2/////////////////////////////////////////////
+
+// sla de referentie naar het formulier op en plaats er een submit-event listener op
+const searchForm = document.getElementById('search-form');
+//koppel eventListener eraan. Als submit wordt getriggerd dan wordt de functie searchCountry uitgvoerd
+searchForm.addEventListener('submit', searchCountry );
+
+const printCountry = document.getElementById('search-result');
+
+// maak functie search country. Wanneer event object wordt aangemaakt wordt parameter e meegegeven
+function searchCountry(e){
+   //voorkom standaard actie, dus dat de pagina ververst
+    e.preventDefault();
+    //koppel searchValue aan html element om de waarde. IK SNAP DEZE STAP NIET!TODO vragen Lex
+    const searchValue = document.getElementById("search-value");
+   //ingevoerde waarde wordt in de fetchdata methode toegevoegd
+    fetchData(searchValue.value);
+    //legen van het invoerveld TODO test met een tekst erin wat er gebeurd en error message
+    searchValue.value = '';
+}
+
+
+//Hierboven heette het searchValue.value en heet vanaf nu country
+async function fetchData(country){
+    //Hiermee weet ik dat elke zoekopdracht de printing leeg wordt gemaakt
+    printCountry.innerHTML = ``;
+    try{
+        //backticks for string interpolation
+        const result = await axios.get(`https://restcountries.com/v2/name/${country}`)
+        const chosenCountry = result.data[0];
+        console.log(chosenCountry);
+        printCountry.innerHTML = `
+        <article class="search-result-box">
+        <span class="flag-title-container">
+        <img src="${chosenCountry.flag}" alt="flag-country" class="flag-individual-country">
+        <h2> ${chosenCountry.name}</h2>
+        </span> 
+        <p>${chosenCountry.name} is situated in ${chosenCountry.subregion}. It has a population of ${chosenCountry.population} people. </p>
+        <p> The capital is ${chosenCountry.capital}  ${currencyCreator(chosenCountry.currencies)}</p>
+        </article>
+    `
+    } catch(e){
+        console.error(e);
     }
+}
 
-    getNetherlands();
-
-function getValuta (country) {
-
-
+//Genereren van een valuta string
+function currencyCreator (currencies) {
+    let output = 'and you can pay with ' ;
+  if(currencies.length ===2){
+    return output + `${currencies[0].name} and  ${currencies[1].name}`;
+    }
+else {
+    return output + `${currencies[0].name}`
+}
 }
 
 

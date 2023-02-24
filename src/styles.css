@@ -17,7 +17,13 @@ body{
 
 h1{
     text-align: center;
-    font-size: 85px;
+    font-size: 75px;
+    font-family: 'Pacifico', cursive;
+}
+
+h2 {
+    text-align: center;
+    font-size: 20px;
     font-family: 'Pacifico', cursive;
 }
 
@@ -75,25 +81,68 @@ p {
     font-size: 18px;
 }
 
-.search-for-countries{
+#search-form{
     display: flex;
-    justify-content: center;
+    justify-content:center;
 }
 
-#text-field {
+#search-value {
+    border:1px solid grey;
     border-radius: 40px 0px 0px 40px;
     height: 50px;
-    width: 500px;
+    width: 400px;
     background-color: transparent;
     text-align: center;
-    align-items: center;
+    margin-right: -4px;
+    padding: 8px;
 }
-.search-country-button {
+
+#search-button {
     border-radius: 0px 30px 30px 0px;
+    border:1px solid grey;
     height:50px;
-    width:250px;
+    width:150px;
     background-color: black;
     color: white;
     text-align: center;
+    text-transform:uppercase;
+    padding: 8px 16px;
 }
+
+#search-result{
+    display:flex;
+    align-items: center;
+    border:2px green dotted;
+    border-radius: 4px;
+    box-shadow: black;
+}
+
+.search-result-box{
+    display:flex;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: .25rem .5rem 1rem 0 rgba(0, 0, 0, 0.1);
+    padding: 24px;
+}
+.search-result-box h2 {
+    font-size: 36px;
+    padding: 0 0 12px 0;
+}
+
+.search-result-box p {
+    padding: 8px 0;
+}
+
+.flag-title-container{
+    border-bottom: 1px solid #ededed;
+    display: flex;
+    align-items: center;
+    margin: 12px;
+}
+
+.flag-individual-country {
+    width: 20%;
+}
+
+
 

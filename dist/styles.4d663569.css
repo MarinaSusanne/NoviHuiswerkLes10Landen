@@ -16,7 +16,13 @@ body {
 h1 {
   text-align: center;
   font-family: Pacifico, cursive;
-  font-size: 85px;
+  font-size: 75px;
+}
+
+h2 {
+  text-align: center;
+  font-family: Pacifico, cursive;
+  font-size: 20px;
 }
 
 p {
@@ -73,27 +79,68 @@ p {
   font-size: 18px;
 }
 
-.search-for-countries {
+#search-form {
   justify-content: center;
   display: flex;
 }
 
-#text-field {
+#search-value {
   height: 50px;
-  width: 500px;
+  width: 400px;
   text-align: center;
   background-color: #0000;
+  border: 1px solid gray;
   border-radius: 40px 0 0 40px;
-  align-items: center;
+  margin-right: -4px;
+  padding: 8px;
 }
 
-.search-country-button {
+#search-button {
   height: 50px;
-  width: 250px;
+  width: 150px;
   color: #fff;
   text-align: center;
+  text-transform: uppercase;
   background-color: #000;
+  border: 1px solid gray;
   border-radius: 0 30px 30px 0;
+  padding: 8px 16px;
+}
+
+#search-result {
+  box-shadow: black;
+  border: 2px dotted green;
+  border-radius: 4px;
+  align-items: center;
+  display: flex;
+}
+
+.search-result-box {
+  border-radius: 8px;
+  flex-direction: column;
+  padding: 24px;
+  display: flex;
+  box-shadow: .25rem .5rem 1rem #0000001a;
+}
+
+.search-result-box h2 {
+  padding: 0 0 12px;
+  font-size: 36px;
+}
+
+.search-result-box p {
+  padding: 8px 0;
+}
+
+.flag-title-container {
+  border-bottom: 1px solid #ededed;
+  align-items: center;
+  margin: 12px;
+  display: flex;
+}
+
+.flag-individual-country {
+  width: 20%;
 }
 
 /*# sourceMappingURL=styles.4d663569.css.map */
