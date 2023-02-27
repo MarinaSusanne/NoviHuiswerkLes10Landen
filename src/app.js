@@ -113,7 +113,7 @@ async function fetchData (country){
         <h2> ${chosenCountry.name}</h2>
         </span> 
         <p>${chosenCountry.name} is situated in ${chosenCountry.subregion}. It has a population of ${chosenCountry.population} people. </p>
-        <p> The capital is ${chosenCountry.capital}  ${currencyCreator(chosenCountry.currencies)}</p>
+        <p> The capital is ${chosenCountry.capital}  ${currencyCreator(chosenCountry.currencies)} ${languageCreator(chosenCountry.languages)} </p>
         </article>
     `
     } catch(e){
@@ -128,15 +128,25 @@ async function fetchData (country){
 function currencyCreator (currencies) {
     let output = 'and you can pay with ' ;
   if(currencies.length === 2){
-    return output + `${currencies[0].name} and ${currencies[1].name}.`;
+    return output + `${currencies[0].name} and ${currencies[1].name}`;
     }
 else {
-    return output + `${currencies[0].name}.`
+    return output + `${currencies[0].name}`
  }
 }
 
-
-
+function languageCreator (languages) {
+    let languagesArray = languages.map((language) => {
+        return language.name;
+    })
+    if (languagesArray.length > 2) {
+        const lastTwoLanguages = languagesArray.slice(-2);
+        const firstLanguages = languagesArray.slice(0, -2);
+        return `${firstLanguages.join(", ")} , ${lastTwoLanguages.join(" and ")}`
+    } else {
+        return `${languages.join("and")}.`
+    }
+}
 
 
 
