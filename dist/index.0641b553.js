@@ -623,26 +623,27 @@ const searchForm = document.getElementById("search-form");
 //koppel eventListener eraan. Als submit wordt getriggerd dan wordt de functie searchCountry uitgvoerd
 searchForm.addEventListener("submit", searchCountry);
 const printCountry = document.getElementById("search-result");
-// maak functie search country. Wanneer event object wordt aangemaakt wordt parameter e meegegeven
+const errorMessageBox = document.getElementById("error-message");
+// maak functie search country. Wanneer event object wordt aangemaakt wordt parameter meegegeven
 function searchCountry(e) {
     //voorkom standaard actie, dus dat de pagina ververst
     e.preventDefault();
-    //koppel searchValue aan html element om de waarde. IK SNAP DEZE STAP NIET!TODO vragen Lex
+    //koppel searchValue aan html element om de waarde op te halen. IK SNAP DEZE STAP NIET!
     const searchValue = document.getElementById("search-value");
     //ingevoerde waarde wordt in de fetchdata methode toegevoegd
     fetchData(searchValue.value);
-    //legen van het invoerveld TODO test met een tekst erin wat er gebeurd en error message
+    //legen van het invoerveld
     searchValue.value = "";
 }
-//Hierboven heette het searchValue.value en heet vanaf nu country
+//hierboven heette het searchValue.value en heet vanaf nu country
 async function fetchData(country) {
-    //Hiermee weet ik dat elke zoekopdracht de printing leeg wordt gemaakt
+    //Hiermee weet ik dat na elke zoekopdracht de printing leeg wordt gemaakt
     printCountry.innerHTML = ``;
+    errorMessageBox.innerHTML = ``;
     try {
         //backticks for string interpolation
         const result = await (0, _axiosDefault.default).get(`https://restcountries.com/v2/name/${country}`);
         const chosenCountry = result.data[0];
-        console.log(chosenCountry);
         printCountry.innerHTML = `
         <article class="search-result-box">
         <span class="flag-title-container">
@@ -655,13 +656,16 @@ async function fetchData(country) {
     `;
     } catch (e) {
         console.error(e);
+        errorMessageBox.innerHTML = `
+       <p class="error-message">${name} Land bestaat niet. Probeer het nogmaals.</p>
+       `;
     }
 }
 //Genereren van een valuta string
 function currencyCreator(currencies) {
     let output = "and you can pay with ";
-    if (currencies.length === 2) return output + `${currencies[0].name} and  ${currencies[1].name}`;
-    else return output + `${currencies[0].name}`;
+    if (currencies.length === 2) return output + `${currencies[0].name} and ${currencies[1].name}.`;
+    else return output + `${currencies[0].name}.`;
 }
 
 },{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
