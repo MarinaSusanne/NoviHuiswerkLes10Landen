@@ -1,0 +1,153 @@
+@import "https://fonts.googleapis.com/css2?family=Pacifico&display=swap";
+* {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #babd8d;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+h1 {
+  text-align: center;
+  font-family: Pacifico, cursive;
+  font-size: 75px;
+}
+
+h2 {
+  text-align: center;
+  font-family: Pacifico, cursive;
+  font-size: 20px;
+}
+
+p {
+  font-family: Baskerville, serif;
+}
+
+#image-wrapper {
+  width: 80%;
+  display: flex;
+}
+
+#image-wrapper2 {
+  width: 20%;
+  display: flex;
+}
+
+.blue-country {
+  color: #00f;
+}
+
+.green-country {
+  color: green;
+}
+
+.purple-country {
+  color: purple;
+}
+
+.yellow-country {
+  color: #b8860b;
+}
+
+.red-country {
+  color: red;
+}
+
+.flag-country {
+  width: 10%;
+}
+
+ul {
+  column-count: 3;
+  background-color: #ffdac6;
+  padding: 30px;
+}
+
+li {
+  flex-grow: 1;
+  font-size: 18px;
+  list-style: none;
+}
+
+p {
+  font-size: 18px;
+}
+
+#search-form {
+  justify-content: center;
+  display: flex;
+}
+
+#search-value {
+  height: 50px;
+  width: 400px;
+  text-align: center;
+  background-color: #0000;
+  border: 1px solid gray;
+  border-radius: 40px 0 0 40px;
+  margin-right: -4px;
+  padding: 8px;
+}
+
+#search-button {
+  height: 50px;
+  width: 150px;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #000;
+  border: 1px solid gray;
+  border-radius: 0 30px 30px 0;
+  padding: 8px 16px;
+}
+
+#search-result {
+  max-width: 500px;
+  box-shadow: black;
+  border-radius: 4px;
+  align-items: center;
+  display: flex;
+}
+
+.search-result-box {
+  border-radius: 8px;
+  flex-direction: column;
+  padding: 24px;
+  display: flex;
+  box-shadow: .5rem 1rem 1rem 1rem #0000001a;
+}
+
+.search-result-box h2 {
+  padding: 0 0 15px;
+  font-size: 36px;
+}
+
+.search-result-box p {
+  padding: 8px 0;
+}
+
+.flag-title-container {
+  border-bottom: 1px solid #006400;
+  justify-content: left;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.flag-individual-country {
+  width: 25%;
+}
+
+#error-message {
+  color: #cd5c5c;
+  text-transform: uppercase;
+  text-align: center;
+  display: flex;
+}
+
+/*# sourceMappingURL=styles.4d663569.css.map */

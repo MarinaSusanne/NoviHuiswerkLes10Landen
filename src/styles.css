@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+/*css RESET*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    width:100%
+}
+
+body{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:#BABD8D;
+}
+
+h1{
+    text-align: center;
+    font-size: 75px;
+    font-family: 'Pacifico', cursive;
+}
+
+h2 {
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Pacifico', cursive;
+}
+
+p{
+    font-family: Baskerville, serif;
+}
+
+#image-wrapper{
+    display:flex;
+    width:80%;
+}
+
+#image-wrapper2{
+    display:flex;
+    width:20%;
+}
+
+.blue-country{
+    color: blue;
+}
+
+.green-country{
+    color:green;
+}
+
+.purple-country{
+    color:purple;
+}
+
+.yellow-country {
+    color: darkgoldenrod;
+}
+
+.red-country{
+    color:red;
+}
+
+.flag-country{
+    width:10%;
+}
+
+ul{
+    background-color: #FFDAC6;
+    padding: 30px;
+    column-count: 3;
+}
+
+li{
+    font-size: 18px;
+    list-style: none;
+    flex-grow:1;
+    }
+
+p {
+    font-size: 18px;
+}
+
+#search-form{
+    display: flex;
+    justify-content:center;
+}
+
+#search-value {
+    border:1px solid grey;
+    border-radius: 40px 0px 0px 40px;
+    height: 50px;
+    width: 400px;
+    background-color: transparent;
+    text-align: center;
+    margin-right: -4px;
+    padding: 8px;
+}
+
+#search-button {
+    border-radius: 0px 30px 30px 0px;
+    border:1px solid grey;
+    height:50px;
+    width:150px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    text-transform:uppercase;
+    padding: 8px 16px;
+}
+
+#search-result{
+    display:flex;
+    align-items: center;
+    border-radius: 4px;
+    max-width:500px;
+    box-shadow: black;
+}
+
+.search-result-box{
+    display:flex;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0.5rem 1rem 1rem 1rem rgba(0, 0, 0, 0.1);
+    padding: 24px;
+}
+.search-result-box h2 {
+    font-size: 36px;
+    padding: 0 0 15px 0px;
+}
+
+.search-result-box p {
+    padding: 8px 0;
+}
+
+.flag-title-container{
+    border-bottom: 1px solid darkgreen;
+    display: flex;
+    justify-content: left;
+    margin-bottom:20px;
+}
+
+.flag-individual-country {
+    width: 25%;
+}
+
+#error-message {
+    color: indianred;
+    text-transform:uppercase;
+    display:flex;
+    text-align: center;
+}
+
+
+
